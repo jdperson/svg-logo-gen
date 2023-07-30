@@ -1,6 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const shapes = require("./lib/shapes");
+const {Circle, Triangle, Square} = require("./lib/shapes.js");
 
 
 async function writeSVGFile(shape) {
@@ -9,7 +9,7 @@ async function writeSVGFile(shape) {
       ${shape.generateSVG()}
     </svg>`;
 
-    fs.writeFile(`./examples/${shape}.svg`, svgWrap, (err) => {
+    fs.writeFile(`./examples/logo.svg`, svgWrap, (err) => {
         err ? console.error("Error writing SVG file:", err) : console.log("SVG successfully written");
     });
 }
