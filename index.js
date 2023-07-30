@@ -9,7 +9,7 @@ async function writeSVGFile(shape) {
       ${shape.generateSVG()}
     </svg>`;
 
-    fs.writeFile(`./examples/logo.svg`, svgWrap, (err) => {
+    fs.writeFile(`./examples/${shape.text}.svg`, svgWrap, (err) => {
         err ? console.error("Error writing SVG file:", err) : console.log("SVG successfully written");
     });
 }
